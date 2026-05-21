@@ -15,6 +15,19 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.*')">
+                        {{ __('Posts') }}
+                    </x-nav-link>
+                    @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('editor'))
+                        <x-nav-link :href="route('admin.posts.index')" :active="request()->routeIs('admin.posts.*')">
+                            {{ __('Admin Posts') }}
+                        </x-nav-link>
+                    @endif
+                    @if (auth()->user()->hasRole('admin'))
+                        <x-nav-link :href="route('admin.audits.index')" :active="request()->routeIs('admin.audits.*')">
+                            {{ __('Auditoría') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -70,6 +83,19 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.*')">
+                {{ __('Posts') }}
+            </x-responsive-nav-link>
+            @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('editor'))
+                <x-responsive-nav-link :href="route('admin.posts.index')" :active="request()->routeIs('admin.posts.*')">
+                    {{ __('Admin Posts') }}
+                </x-responsive-nav-link>
+            @endif
+            @if (auth()->user()->hasRole('admin'))
+                <x-responsive-nav-link :href="route('admin.audits.index')" :active="request()->routeIs('admin.audits.*')">
+                    {{ __('Auditoría') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
