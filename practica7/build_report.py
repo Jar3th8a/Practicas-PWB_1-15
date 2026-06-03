@@ -178,7 +178,7 @@ def add_title_page(doc):
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     set_paragraph_spacing(p, before=18, after=0)
-    r = p.add_run("Evidencias generadas con capturas reales del sistema y validacion en API.")
+    r = p.add_run("Documento preparado para entrega academica.")
     set_run_font(r, size=11, italic=True, color=RGBColor(80, 80, 80))
 
 
@@ -220,7 +220,7 @@ def main():
     add_heading(doc, "4. Resultado final", level=1)
     add_bullet(doc, "El catalogo responde con filtros reales y paginacion desde Laravel.")
     add_bullet(doc, "La URL refleja el estado de busqueda, categoria y paginacion.")
-    add_bullet(doc, "Se generaron capturas y un reporte Word para entrega academica.")
+    add_bullet(doc, "Se incluyeron evidencias visuales y un reporte Word para entrega academica.")
     add_bullet(doc, "Validaciones ejecutadas: php artisan test y npm run build.")
 
     doc.save(OUT)
