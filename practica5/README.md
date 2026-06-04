@@ -1,7 +1,5 @@
 # Proyecto Integrador - Practica 05
 
-Alumno: Alejandro Avalos Espinosa
-
 Estructura:
 - `backend/`: API Laravel 12 con Sanctum, CRUD de productos e imagenes.
 - `frontend/`: SPA Vue 3 con Router + Pinia + carrito + subida de imagen.
